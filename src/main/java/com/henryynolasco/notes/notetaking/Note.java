@@ -11,8 +11,6 @@ public class Note {
 	private String mentions;
 	private int priority;
 	
-	
-	
 	public Note(int id, String description, String text, String datecreation, String estimateCompletion,
 			String completion, String link, String mentions, int priority) {
 		super();
@@ -80,6 +78,11 @@ public class Note {
 	public void setPriority(int priority) {
 		this.priority = priority;
 	}
-	
+	@Override
+	public String toString() {
+		return "Note [id=" + id + ", description=" + description + ", text=" + text + ", datecreation=" + datecreation
+				+ ", estimateCompletion=" + estimateCompletion + ", completion=" + completion + ", link=" + link
+				+ ", mentions=" + mentions + ", priority=" + priority + "]";
+	}
 	
 }
