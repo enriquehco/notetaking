@@ -11,19 +11,19 @@ import org.springframework.stereotype.Controller;
 public class NoteController {
 
 	@Autowired
-    ChatHistory historyService;
+    NoteHistory historyService;
 	
 	public NoteController() {
-		this.historyService = new ChatHistory();
+		this.historyService = new NoteHistory();
 	}
 
 	public void insertNote(String name, String message) {
 		Note lastnote = new Note(1,name, message, null,null,null,null,null,0);
-		historyService.storeChatMessage(lastnote);
+		historyService.storeNoteMessage(lastnote);
 	}
 	
 	public List<Note> retrieveAllCourses(){
-		return historyService.getChatHistory();
+		return historyService.getNoteHistory();
 	}
 	
 	public void showNotes() {

@@ -7,14 +7,14 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ChatHistory {
+public class NoteHistory {
 	List<Note> chatHistory = new LinkedList<>();
 
-    public void storeChatMessage(Note chatString) {
+    public void storeNoteMessage(Note chatString) {
         chatHistory.add(chatString);
     }
 
-    public List<Note> getChatHistory() {
+    public List<Note> getNoteHistory() {
         return Collections.unmodifiableList(chatHistory);
     }
 }
