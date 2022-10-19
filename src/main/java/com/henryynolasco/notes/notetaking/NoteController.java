@@ -18,16 +18,17 @@ public class NoteController {
 	}
 
 	public void insertNote(String name, String message) {
-		Note lastnote = new Note(1,name, message, null,null,null,null,null,0);
+		int notenumber = historyService.getLength() + 1;
+		Note lastnote = new Note(notenumber,name, message, null,null,null,null,null,0);
 		historyService.storeChatMessage(lastnote);
 	}
 	
-	public List<Note> retrieveAllCourses(){
+	public List<Note> retrieveAllNotes(){
 		return historyService.getChatHistory();
 	}
 	
 	public void showNotes() {
-		List<Note> lista = retrieveAllCourses();
+		List<Note> lista = retrieveAllNotes();
 		for(Note n : lista){
 			System.out.println(n.toString());
 		}

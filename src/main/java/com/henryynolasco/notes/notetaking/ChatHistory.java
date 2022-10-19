@@ -17,4 +17,8 @@ public class ChatHistory {
     public List<Note> getChatHistory() {
         return Collections.unmodifiableList(chatHistory);
     }
+    
+    public int getLength() {
+    	return chatHistory.size();
+    }
 }
