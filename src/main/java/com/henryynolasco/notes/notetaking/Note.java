@@ -2,7 +2,7 @@ package com.henryynolasco.notes.notetaking;
 
 public class Note {
 	private int id;
-	private String description;
+	private String title;
 	private String text;
 	private String datecreation;
 	private String estimateCompletion;
@@ -11,11 +11,11 @@ public class Note {
 	private String mentions;
 	private int priority;
 	
-	public Note(int id, String description, String text, String datecreation, String estimateCompletion,
+	public Note(int id, String title, String text, String datecreation, String estimateCompletion,
 			String completion, String link, String mentions, int priority) {
 		super();
 		this.id = id;
-		this.description = description;
+		this.title = title;
 		this.text = text;
 		this.datecreation = datecreation;
 		this.estimateCompletion = estimateCompletion;
@@ -30,11 +30,11 @@ public class Note {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getDescription() {
-		return description;
+	public String getTitle() {
+		return title;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getText() {
 		return text;
@@ -80,7 +80,7 @@ public class Note {
 	}
 	@Override
 	public String toString() {
-		return "Note [id=" + id + ", description=" + description + ", text=" + text + ", datecreation=" + datecreation
+		return "Note [id=" + id + ", title=" + title + ", text=" + text + ", datecreation=" + datecreation
 				+ ", estimateCompletion=" + estimateCompletion + ", completion=" + completion + ", link=" + link
 				+ ", mentions=" + mentions + ", priority=" + priority + "]";
 	}

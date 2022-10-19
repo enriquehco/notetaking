@@ -17,9 +17,9 @@ public class NoteController {
 		this.historyService = new NoteHistory();
 	}
 
-	public void insertNote(String name, String message) {
+	public void insertNote(String title, String message, String estimate, String link, String mention, int priority) {
 		int notenumber = historyService.getLength() + 1;
-		Note lastnote = new Note(notenumber,name, message, null,null,null,null,null,0);
+		Note lastnote = new Note(notenumber, title, message, null, estimate, null, link, mention, priority);
 		historyService.storeNoteMessage(lastnote);
 	}
 	

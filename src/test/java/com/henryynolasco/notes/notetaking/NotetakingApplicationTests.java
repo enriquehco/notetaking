@@ -22,7 +22,7 @@ class NotetakingApplicationTests {
 	@Test
 	void insertaNotaTest() {
 		//Note nota = new Note(1,"Primera nota","hoy el sol se escondio",null,null,null,null,null,0);
-		_nc.insertNote("Primera nota", "hoy el sol se escondio");
+		//_nc.insertNote("Primera nota", "hoy el sol se escondio");
 		Assert.isTrue(_nc.getNumberNotes() == 1, "Passed");
 	}
 

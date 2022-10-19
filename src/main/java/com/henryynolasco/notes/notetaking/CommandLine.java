@@ -19,7 +19,15 @@ public class CommandLine implements CommandLineRunner {
     			String title = scanner.nextLine();
     			System.out.println("Enter a message");
     			String msg = scanner.nextLine();
-    			controller.insertNote(title,msg);
+    			System.out.println("Enter the estimated date of completion (DD/MM/YY)");
+    			String estimate = scanner.nextLine();
+    			System.out.println("Enter a link or press enter to skip");
+    			String link = scanner.nextLine();
+    			System.out.println("Enter a mention to someone (@someone) or press enter to skip");
+    			String mention = scanner.nextLine();
+    			System.out.println("Enter priority (0 to 5)");
+    			String priority = scanner.nextLine();
+    			controller.insertNote(title,msg, estimate, link, mention, Integer.parseInt(estimate));
     		}
     		line = scanner.nextLine();
         }
