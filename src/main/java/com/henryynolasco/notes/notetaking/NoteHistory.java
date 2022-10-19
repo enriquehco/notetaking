@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class NoteHistory {
-	List<Note> chatHistory = new LinkedList<>();
+	List<Note> noteHistory = new LinkedList<>();
 
     public void storeNoteMessage(Note chatString) {
-        chatHistory.add(chatString);
+    	noteHistory.add(chatString);
     }
 
     public List<Note> getNoteHistory() {
-        return Collections.unmodifiableList(chatHistory);
+        return Collections.unmodifiableList(noteHistory);
     }
 }
