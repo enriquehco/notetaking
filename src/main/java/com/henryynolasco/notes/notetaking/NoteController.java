@@ -33,4 +33,8 @@ public class NoteController {
 			System.out.println(n.toString());
 		}
 	}
+	
+	public int getNumberNotes() {
+		return historyService.getLength();
+	}
 }
