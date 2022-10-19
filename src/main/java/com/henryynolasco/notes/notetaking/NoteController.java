@@ -1,5 +1,6 @@
 package com.henryynolasco.notes.notetaking;
 
+import java.lang.reflect.Constructor;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,6 +13,10 @@ public class NoteController {
 	@Autowired
     ChatHistory historyService;
 	
+	public NoteController() {
+		this.historyService = new ChatHistory();
+	}
+
 	public void insertNote(String name, String message) {
 		Note lastnote = new Note(1,name, message, null,null,null,null,null,0);
 		historyService.storeChatMessage(lastnote);
@@ -19,5 +24,12 @@ public class NoteController {
 	
 	public List<Note> retrieveAllCourses(){
 		return historyService.getChatHistory();
+	}
+	
+	public void showNotes() {
+		List<Note> lista = retrieveAllCourses();
+		for(Note n : lista){
+			System.out.println(n.toString());
+		}
 	}
 }

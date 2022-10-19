@@ -13,17 +13,17 @@ public class CommandLine implements CommandLineRunner {
         
         Scanner scanner = new Scanner(System.in);
 		String line = scanner.nextLine();
-        while(true) {
-    			if(line.equals("insertar")) {
-    				System.out.println("Enter a title");
-    				String title = scanner.nextLine();
-    				System.out.println("Enter a message");
-    				String msg = scanner.nextLine();
-    				controller.insertNote(title,msg);
-    				controller.retrieveAllCourses();
-    			}
-    		
+        while(!".".equals(line)) {
+    		if(line.equals("insertar")) {
+    			System.out.println("Enter a title");
+    			String title = scanner.nextLine();
+    			System.out.println("Enter a message");
+    			String msg = scanner.nextLine();
+    			controller.insertNote(title,msg);
+    		}
+    		line = scanner.nextLine();
         }
+        controller.showNotes();
         
      }
 }
