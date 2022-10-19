@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 public class NoteHistory {
 	List<Note> noteHistory = new LinkedList<>();
 
-    public void storeNoteMessage(Note chatString) {
-    	noteHistory.add(chatString);
+    public void storeNoteMessage(Note noteString) {
+    	noteHistory.add(noteString);
     }
 
     public List<Note> getNoteHistory() {
